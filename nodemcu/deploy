@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for i in *.lua; do
+	luatool.py -f $i -t $i
+done
