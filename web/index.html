@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+.key-up {
+  opacity: 0.5;
+}
+#debug {
+  display: none;
+}
+#keyboard div, #kbleft div, #kbright div {
+  display:inline-block;
+  width:25%;
+  height:50px;
+  line-height: 50px;
+  margin:5px;
+  text-align: center;
+  border: 1px solid black;
+}
+#keyboard #up {
+  margin-left: 120px;
+}
+
+#left, #right, #up, #down {
+  position: fixed;
+  bottom: 0;
+  width: 25%;
+}
+
+#left {
+  left: 0;
+}
+#right {
+  left: 25%;
+}
+
+#up, #down {
+  right: 0;
+}
+
+#up {
+  bottom: 60px;
+}
+.key.down {
+  background: lime;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="debug">
+    <p>User arrow keys to control the RC CAR</p>
+    <ul>
+      <li>Direction: <span id="dir"></span></li>
+      <li>Driving: <span id="dri"></span></li>
+    </ul>
+    <ul id="log" style="display:none">
+        <li>List of keys:</li>
+    </ul>
+  </div>
+    <div id="kbleft">
+      <div id="left" class="key" data-key="37">&#8668;</div>
+      <div id="right" class="key" data-key="39">&#8669;</div>
+    </div>
+    <div id="kbright">
+      <div id="up" class="key" data-key="38">&#8657;</div><br/>
+      <div id="down" class="key" data-key="40">&#8659;</div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- Paho MQTT Client over WebSockets -->
+    <script src="js/mqttws31.js"></script>
+    <!-- GameController -->
+    <script src="js/gamecontroller.js"></script>
+    <!-- Main app -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
