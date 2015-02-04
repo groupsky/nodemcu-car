@@ -5,11 +5,11 @@ IN2 = 5
 IN3 = 2
 IN4 = 1
 
-BROKER_IP = "broker.mqtt-dashboard.com"
+BROKER_IP = "178.62.67.131"
 BROKER_PORT = 1883
 BROKER_USER = ""
 BROKER_PASS = ""
-BROKER_CLIENT = "/hackafe-car"
+BROKER_CLIENT = "car-" .. wifi.sta.getmac()
 BROKER_TOPIC = "/hackafe-car"
 
 driver = require("l298")

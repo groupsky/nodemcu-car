@@ -50,6 +50,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.hackafe.rccarcontrol.MainActivity" />
         </activity>
+        <activity
+            android:name=".AccelerometerRcActivity"
+            android:label="@string/title_activity_accelerometer_rc"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="sensorLandscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.hackafe.rccarcontrol.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

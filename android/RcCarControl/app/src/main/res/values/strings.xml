@@ -12,5 +12,8 @@
     <string name="backward_btn_label">Backward</string>
     <string name="title_activity_analog_rc">AnalogRcActivity</string>
     <string name="analog_rc_btn_label">Analog</string>
+    <string name="title_activity_accelerometer_rc">AccelerometerRcActivity</string>
+    <string name="stop_btn_label">Stop</string>
+    <string name="accelerometer_rc_btn_label">Accelerometer</string>
 
 </resources>

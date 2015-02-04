@@ -17,6 +17,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ((Button)findViewById(R.id.simple_rc_btn)).setOnClickListener(this);
         ((Button)findViewById(R.id.analog_rc_btn)).setOnClickListener(this);
+        ((Button)findViewById(R.id.accelerometer_rc_btn)).setOnClickListener(this);
     }
 
 
@@ -28,6 +29,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.analog_rc_btn:
                 startActivity(new Intent(this, AnalogRcActivity.class));
+                break;
+            case R.id.accelerometer_rc_btn:
+                startActivity(new Intent(this, AccelerometerRcActivity.class));
                 break;
         }
     }

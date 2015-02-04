@@ -1,5 +1,5 @@
 wifi.setmode(wifi.STATION)
-wifi.sta.config("hackafe.org", "")
+wifi.sta.config("Hackafe Members", "hackafe321")
 wifi.sta.connect()
 
 tmr.alarm(1, 1000, 1, function()

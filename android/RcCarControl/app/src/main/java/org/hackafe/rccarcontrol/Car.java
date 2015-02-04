@@ -43,7 +43,7 @@ public class Car {
     }
 
     public void right(int power) {
-        publish("r");
+        publish("r" + power);
     }
 
     public void forward(int power) {
