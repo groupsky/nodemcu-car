@@ -1,3 +1,3 @@
-[submodule "AndEngine"]
-	path = AndEngine
-	url = git@github.com:onyxvd/AndEngine.git
+[submodule "android/RcCarControl/AndEngine"]
+	path = android/RcCarControl/AndEngine
+	url = git@github.com:groupsky/AndEngine.git

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RcCarControl</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="simple_rc_btn_label">Simple</string>
+    <string name="title_activity_simple_rc">SimpleRcActivity</string>
+    <string name="left_btn_label">Left</string>
+    <string name="right_btn_label">Right</string>
+    <string name="forward_btn_label">Forward</string>
+    <string name="backward_btn_label">Backward</string>
+    <string name="title_activity_analog_rc">AnalogRcActivity</string>
+    <string name="analog_rc_btn_label">Analog</string>
+
+</resources>
