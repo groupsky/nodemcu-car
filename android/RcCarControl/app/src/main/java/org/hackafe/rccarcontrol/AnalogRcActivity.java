@@ -1,6 +1,8 @@
 package org.hackafe.rccarcontrol;
 
+import android.nfc.Tag;
 import android.opengl.GLES20;
+import android.util.Log;
 import android.widget.Toast;
 
 import org.andengine.engine.camera.Camera;
@@ -29,6 +31,7 @@ public class AnalogRcActivity extends SimpleBaseGameActivity {
 
     private static final int CAMERA_WIDTH = 280;
     private static final int CAMERA_HEIGHT = 160;
+    private static final String TAG = "rc.analog";
 
     // ===========================================================
     // Fields
@@ -130,11 +133,12 @@ public class AnalogRcActivity extends SimpleBaseGameActivity {
                             final float pValueX, final float pValueY) {
                         if (pValueX != oldX) {
                             int power = Math.round(pValueX * pValueX * 100);
-                            if (power < 1) return;
                             System.out.println(power);
-                            if (pValueX > 0) {
+                            if (power < 2) {
+                                RcApplication.CAR.central();
+                            } else if (pValueX > 1) {
                                 RcApplication.CAR.right(power);
-                            } else if (pValueX < 0) {
+                            } else if (pValueX < 1) {
                                 RcApplication.CAR.left(power);
                             } else {
                                 RcApplication.CAR.central();
@@ -147,6 +151,7 @@ public class AnalogRcActivity extends SimpleBaseGameActivity {
                     public void onControlClick(
                             final AnalogOnScreenControl pAnalogOnScreenControl) {
                                                 /* Nothing. */
+                        RcApplication.CAR.central();
                     }
                 });
         velocityOnScreenControl.getControlBase().setBlendFunction(
@@ -164,32 +169,28 @@ public class AnalogRcActivity extends SimpleBaseGameActivity {
                 this.mOnScreenControlKnobTextureRegion, 0.1f,
                 this.getVertexBufferObjectManager(),
                 new IAnalogOnScreenControlListener() {
-
                     float oldY = 0;
 
                     @Override
-                    public void onControlChange(
-                            final BaseOnScreenControl pBaseOnScreenControl,
-                            final float pValueX, final float pValueY) {
+                    public void onControlClick(AnalogOnScreenControl pAnalogOnScreenControl) {
+                    }
+
+                    @Override
+                    public void onControlChange(BaseOnScreenControl pBaseOnScreenControl, float pValueX, float pValueY) {
                         if (pValueY != oldY) {
                             int power = Math.round(pValueY * pValueY * 100);
                             System.out.println(pValueY);
-                            if (power < 1) return;
-                            if (pValueY < 0) {
+                            if (power < 2) {
+                                RcApplication.CAR.neutral();
+                            } else if (pValueY < 1) {
                                 RcApplication.CAR.forward(power);
-                            } else if (pValueY > 0) {
+                            } else if (pValueY > 1) {
                                 RcApplication.CAR.reverse(power);
                             } else {
                                 RcApplication.CAR.neutral();
                             }
                         }
                         oldY = pValueY;
-                    }
-
-                    @Override
-                    public void onControlClick(
-                            final AnalogOnScreenControl pAnalogOnScreenControl) {
-                                                /* Nothing. */
                     }
                 });
         rotationOnScreenControl.getControlBase().setBlendFunction(

@@ -34,9 +34,9 @@ public class AccelerometerRcActivity extends ActionBarActivity implements View.O
         findViewById(R.id.btnBackward).setOnTouchListener(this);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
         if (sensor != null) {
-            Toast.makeText(this, "Using GAME_ROTATION_VECTOR", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Using ROTATION_VECTOR", Toast.LENGTH_SHORT).show();
         } else {
             sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
             if (sensor != null) {
@@ -106,9 +106,9 @@ public class AccelerometerRcActivity extends ActionBarActivity implements View.O
         Log.d(TAG, "Heading: "+heading);
         if (heading != lastHeading) {
             lastHeading = heading;
-            if (heading < -1) {
+            if (heading < -2) {
                 RcApplication.CAR.left(-heading);
-            } else if (heading > 1) {
+            } else if (heading > 2) {
                 RcApplication.CAR.right(heading);
             } else {
                 RcApplication.CAR.central();
